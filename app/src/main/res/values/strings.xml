@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">take-a-break</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_alarm">Alarme</string>
+    <string name="title_dashboard">Tarefas</string>
+    <string name="title_notifications">Estatísticas</string>
+    <string name="title_settings">Configurações</string>
 </resources>
