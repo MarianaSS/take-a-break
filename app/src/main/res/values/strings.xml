@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">take-a-break</string>
-    <string name="title_alarm">Alarme</string>
+    <string name="app_name">Take a Break</string>
+    <string name="title_timer">Timer</string>
     <string name="title_dashboard">Tarefas</string>
     <string name="title_notifications">Estatísticas</string>
     <string name="title_settings">Configurações</string>
+    <string name="app_slogan">Otimize seu tempo, melhore sua performance.</string>
 </resources>
