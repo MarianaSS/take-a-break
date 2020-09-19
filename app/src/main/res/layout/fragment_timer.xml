@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:padding="16dp"
     tools:context=".ui.home.TimerFragment">
 
@@ -11,10 +12,10 @@
         android:id="@+id/timer_fragment_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="24sp"
-        android:textColor="@color/colorTextPrimary"
         android:fontFamily="sans-serif-black"
+        android:text="@string/app_name"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,40 +23,75 @@
         android:id="@+id/timer_fragment_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/timer_fragment_title"
-        app:layout_constraintStart_toStartOf="@id/timer_fragment_title"
-        android:textColor="@color/colorTextSecondary"
-        android:text="@string/app_slogan"
         android:layout_marginTop="8dp"
-        android:textSize="16sp" />
+        android:text="@string/app_slogan"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/timer_fragment_title"
+        app:layout_constraintTop_toBottomOf="@id/timer_fragment_title" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/CircularDeterminateProgressBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:progress="80"
+        android:indeterminate="false"
         android:max="100"
         android:minHeight="340dp"
-        android:indeterminate="false"
-        app:layout_constraintBottom_toTopOf="@id/card_messages"
-        app:layout_constraintTop_toBottomOf="@id/timer_fragment_subtitle"
-        app:layout_constraintStart_toStartOf="@id/timer_fragment_title"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_messages"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:progress="80"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/timer_fragment_title"
+        app:layout_constraintTop_toBottomOf="@id/timer_fragment_subtitle" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/progressBar">
 
         <TextView
+            android:id="@+id/editTextTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            tools:text="Você está mandando super bem!"/>
-    </androidx.cardview.widget.CardView>
+            android:layout_gravity="center|center_horizontal"
+            android:singleLine="true"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="48sp"
+            android:typeface="sans"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="@+id/progressBar"
+            app:layout_constraintStart_toStartOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/progressBar"
+            tools:text="03:45" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/progressBar"
+            app:layout_constraintStart_toStartOf="@+id/progressBar"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTime"
+            tools:text="Reunião de time" />
+
+        <ImageButton
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/speech_pause_button"
+            android:src="@drawable/ic_baseline_pause_24"
+            app:layout_constraintEnd_toEndOf="@+id/editTextTime"
+            app:layout_constraintStart_toStartOf="@+id/editTextTime"
+            app:layout_constraintTop_toBottomOf="@id/textView" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

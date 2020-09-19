@@ -5,4 +5,5 @@
     <string name="title_notifications">Estatísticas</string>
     <string name="title_settings">Configurações</string>
     <string name="app_slogan">Otimize seu tempo, melhore sua performance.</string>
+    <string name="speech_pause_button">pausar</string>
 </resources>
