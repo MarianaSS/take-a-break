@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">Take a Break</string>
+    <string name="app_slogan">Otimize seu tempo, melhore sua performance.</string>
+
+    <!-- Timer Screen -->
     <string name="title_timer">Timer</string>
+    <string name="label_next_task">Próximo</string>
+
     <string name="title_dashboard">Tarefas</string>
     <string name="title_notifications">Estatísticas</string>
     <string name="title_settings">Configurações</string>
-    <string name="app_slogan">Otimize seu tempo, melhore sua performance.</string>
+
     <string name="speech_pause_button">pausar</string>
 </resources>

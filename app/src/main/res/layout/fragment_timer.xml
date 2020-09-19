@@ -2,9 +2,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:layout_width="match_parent">
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -40,11 +40,11 @@
             style="@style/CircularDeterminateProgressBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:indeterminate="false"
             android:max="100"
             android:minHeight="340dp"
             android:progress="80"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/timer_fragment_title"
             app:layout_constraintTop_toBottomOf="@id/timer_fragment_subtitle" />
@@ -72,7 +72,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/progressBar"
                 app:layout_constraintStart_toStartOf="@+id/progressBar"
                 app:layout_constraintTop_toTopOf="@+id/progressBar"
-                android:text="03:45" />
+                tools:text="03:45" />
 
             <TextView
                 android:id="@+id/textView"
@@ -85,7 +85,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/progressBar"
                 app:layout_constraintStart_toStartOf="@+id/progressBar"
                 app:layout_constraintTop_toBottomOf="@+id/editTextTime"
-                android:text="Reunião de time" />
+                tools:text="Reunião de time" />
 
             <ImageButton
                 style="@style/Widget.AppCompat.Button.Borderless"
@@ -100,7 +100,54 @@
                 app:layout_constraintTop_toBottomOf="@id/textView" />
         </LinearLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@id/boxMessageAlert"
+            app:layout_constraintEnd_toEndOf="@id/progressBar"
+            app:layout_constraintStart_toStartOf="@id/progressBar"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar">
+
+            <TextView
+                android:id="@+id/scheduleNext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_next_task"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/scheduleTask"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scheduleNext"
+                tools:text="Almoço" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/scheduleTask"
+                tools:text="12h - 13h" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <include
+            android:id="@+id/boxMessageAlert"
             layout="@layout/component_message_alert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
