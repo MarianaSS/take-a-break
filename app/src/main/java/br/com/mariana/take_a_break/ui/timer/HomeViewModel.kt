@@ -1,4 +1,4 @@
-package br.com.mariana.take_a_break.ui.home
+package br.com.mariana.take_a_break.ui.timer
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

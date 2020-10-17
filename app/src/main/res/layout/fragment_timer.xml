@@ -9,54 +9,53 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:padding="16dp"
-        tools:context=".ui.home.TimerFragment">
+        android:background="@color/colorWhiteAbsolute"
+        android:padding="@dimen/margin_16dp"
+        tools:context=".ui.timer.TimerFragment">
 
         <TextView
-            android:id="@+id/timer_fragment_title"
+            android:id="@+id/titleTimerFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="@string/app_name"
             android:textColor="@color/colorTextPrimary"
-            android:textSize="32sp"
+            android:textSize="@dimen/text_title_32sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/timer_fragment_subtitle"
+            android:id="@+id/subtitleTimerFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/margin_8dp"
             android:text="@string/app_slogan"
             android:textColor="@color/colorTextSecondary"
-            android:textSize="21sp"
-            app:layout_constraintStart_toStartOf="@id/timer_fragment_title"
-            app:layout_constraintTop_toBottomOf="@id/timer_fragment_title" />
+            android:textSize="@dimen/text_subtitle_21sp"
+            app:layout_constraintStart_toStartOf="@id/titleTimerFragment"
+            app:layout_constraintTop_toBottomOf="@id/titleTimerFragment" />
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="@style/CircularDeterminateProgressBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:indeterminate="false"
-            android:max="100"
-            android:minHeight="340dp"
-            android:progress="0"
+            android:layout_marginTop="@dimen/margin_24dp"
             android:clickable="true"
             android:focusable="true"
+            android:indeterminate="false"
+            android:max="100"
+            android:minHeight="@dimen/progressBar_height"
+            android:progress="0"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/timer_fragment_title"
-            app:layout_constraintTop_toBottomOf="@id/timer_fragment_subtitle"
+            app:layout_constraintStart_toStartOf="@id/titleTimerFragment"
+            app:layout_constraintTop_toBottomOf="@id/subtitleTimerFragment"
             tools:progress="75" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/container_timer_fields"
+            android:id="@+id/containerInsideProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@+id/progressBar"
             app:layout_constraintEnd_toEndOf="@+id/progressBar"
             app:layout_constraintStart_toStartOf="@+id/progressBar"
@@ -69,44 +68,44 @@
                 android:layout_gravity="center|center_horizontal"
                 android:singleLine="true"
                 android:textColor="@color/colorTextPrimary"
-                android:textSize="48sp"
+                android:textSize="@dimen/text_clockDisplay_48sp"
                 android:typeface="sans"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textCurrentTask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|center_horizontal"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/margin_8dp"
                 android:textColor="@color/colorTextSecondary"
-                android:textSize="24sp"
+                android:textSize="@dimen/text_subtitle_21sp"
                 app:layout_constraintEnd_toEndOf="@id/countDown"
                 app:layout_constraintStart_toStartOf="@id/countDown"
                 app:layout_constraintTop_toBottomOf="@+id/countDown"
-                android:text="Reunião de time" />
+                tools:text="Reunião de time" />
 
             <ImageButton
                 android:id="@+id/buttonPauseTimer"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="100dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/margin_8dp"
                 android:contentDescription="@string/speech_pause_button"
                 android:src="@drawable/ic_baseline_pause_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView" />
+                app:layout_constraintTop_toBottomOf="@id/textCurrentTask" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/containerNextTask"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="@dimen/margin_24dp"
             app:layout_constraintBottom_toTopOf="@id/boxMessageAlert"
             app:layout_constraintEnd_toEndOf="@id/progressBar"
             app:layout_constraintStart_toStartOf="@id/progressBar"
@@ -118,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/label_next_task"
                 android:textColor="@color/colorTextSecondary"
-                android:textSize="18sp"
+                android:textSize="@dimen/text_18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -128,23 +127,23 @@
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Almoço"
                 android:textColor="@color/colorTextPrimary"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                android:textSize="@dimen/text_24sp"
+                app:layout_constraintEnd_toStartOf="@+id/timeNextTask"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/scheduleNext" />
+                app:layout_constraintTop_toBottomOf="@id/scheduleNext"
+                tools:text="Almoço" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/timeNextTask"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12h - 13h"
                 android:textColor="@color/colorTextPrimary"
-                android:textSize="24sp"
+                android:textSize="@dimen/text_24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/scheduleTask" />
+                app:layout_constraintTop_toTopOf="@id/scheduleTask"
+                tools:text="12h - 13h" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -153,7 +152,7 @@
             layout="@layout/component_message_alert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/margin_8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/progressBar"
             app:layout_constraintStart_toStartOf="parent" />
