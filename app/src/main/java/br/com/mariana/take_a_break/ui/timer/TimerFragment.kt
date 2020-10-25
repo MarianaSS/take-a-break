@@ -1,4 +1,4 @@
-package br.com.mariana.take_a_break.ui.home
+package br.com.mariana.take_a_break.ui.timer
 
 import android.os.Bundle
 import android.os.CountDownTimer
