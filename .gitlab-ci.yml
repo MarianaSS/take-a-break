@@ -5,8 +5,8 @@
 image: openjdk:8-jdk
 
 stages:
-  - build
   - sonar
+  - build
 
 variables:
 
