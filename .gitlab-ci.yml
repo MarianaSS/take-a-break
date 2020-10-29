@@ -4,6 +4,10 @@
 
 image: openjdk:8-jdk
 
+stages:
+  - build
+  - sonar
+
 variables:
 
   # ANDROID_COMPILE_SDK is the version of Android you're compiling with.
