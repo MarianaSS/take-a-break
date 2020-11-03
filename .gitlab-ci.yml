@@ -76,7 +76,7 @@ assembleDebug:
     paths:
       - app/build/outputs/
 
- Run all tests, if any fails, interrupt the pipeline(fail it)
+# Run all tests, if any fails, interrupt the pipeline(fail it)
 debugTests:
   interruptible: true
   stage: test
