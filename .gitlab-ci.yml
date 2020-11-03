@@ -5,6 +5,7 @@
 image: openjdk:8-jdk
 
 stages:
+  - test
   - sonar
   - build
 
@@ -75,12 +76,12 @@ assembleDebug:
     paths:
       - app/build/outputs/
 
-# Run all tests, if any fails, interrupt the pipeline(fail it)
-# debugTests:
-#   interruptible: true
-#   stage: test
-#   script:
-#     - ./gradlew -Pci --console=plain :app:testDebug
+ Run all tests, if any fails, interrupt the pipeline(fail it)
+debugTests:
+  interruptible: true
+  stage: test
+  script:
+    - ./gradlew -Pci --console=plain :app:testDebug
 
 sonarqube-check:
   interruptible: true
