@@ -1,0 +1,22 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/settings_header">
+
+        <SeekBarPreference
+            android:max="120"
+            app:adjustable="true"
+            app:defaultValue="25"
+            app:showSeekBarValue="true"
+            app:title="@string/settings_work_set" />
+
+        <SeekBarPreference
+            android:max="60"
+            app:adjustable="true"
+            app:defaultValue="5"
+            app:showSeekBarValue="true"
+            app:title="@string/settings_break_set" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -11,4 +11,5 @@
     <dimen name="text_clockDisplay_48sp">48sp</dimen>
     <dimen name="text_24sp">24sp</dimen>
     <dimen name="text_18sp">18sp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

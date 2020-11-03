@@ -12,4 +12,11 @@
 
     <string name="speech_pause_button">pausar</string>
     <string name="message_you_are_doing_well">Você está mandando super bem!</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_header">Configurações do Timer</string>
+    <string name="settings_work_set">Tempo de trabalho</string>
+    <string name="settings_break_set">Tempo de pausa</string>
+
 </resources>
