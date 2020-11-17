@@ -30,6 +30,11 @@ android {
     }
 }
 
+
+plugins {
+    id "org.sonarqube" version "2.7"
+}
+
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
