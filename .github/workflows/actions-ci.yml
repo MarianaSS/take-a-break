@@ -19,10 +19,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Unit tests
-        run: bash ./gradlew test --stacktrace
       - name: SonarQube
         run: bash ./gradlew sonarqube -Dsonar.qualitygate.wait=true -Dsonar.projectKey=take-a-break -Dsonar.sources=. -Dsonar.host.url=http://ec2-184-73-40-17.compute-1.amazonaws.com:9000 -Dsonar.login=2478252f96fd4886180ae4200cd25289b675bc89
+      - name: Unit tests
+        run: bash ./gradlew test --stacktrace
    
 
   apk:
