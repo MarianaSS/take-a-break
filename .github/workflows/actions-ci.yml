@@ -20,7 +20,7 @@ jobs:
         with:
           java-version: 1.8
       - name: SonarQube
-        run: bash ./gradlew sonarqube -Dsonar.qualitygate.wait=true -Dsonar.projectKey=take-a-break -Dsonar.sources=. -Dsonar.host.url=http://ec2-184-73-40-17.compute-1.amazonaws.com:9000 -Dsonar.login=2478252f96fd4886180ae4200cd25289b675bc89
+        run: bash ./gradlew sonarqube -Dsonar.qualitygate.wait=true -Dsonar.projectKey=take-a-break -Dsonar.sources=. -Dsonar.host.url=http://ec2-184-73-40-17.compute-1.amazonaws.com:9000 -Dsonar.login=b0bf79246df5c47cae8806b2bacd64ca5fcd60b2
       - name: Unit tests
         run: bash ./gradlew test --stacktrace
    
