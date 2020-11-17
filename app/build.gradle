@@ -2,6 +2,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+plugins {
+    id "org.sonarqube" version "2.7"
+}
+
 android {
     compileSdkVersion 29
 
@@ -31,9 +35,6 @@ android {
 }
 
 
-plugins {
-    id "org.sonarqube" version "2.7"
-}
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
