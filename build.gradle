@@ -29,5 +29,5 @@ task clean(type: Delete) {
 }
 
 plugins {
-  id "org.sonarqube" version "2.7"
+    id "org.sonarqube" version "2.7"
 }
