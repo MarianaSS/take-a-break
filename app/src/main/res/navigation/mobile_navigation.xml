@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_timer" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="br.com.mariana.take_a_break.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_calendar"
+        android:name="br.com.mariana.take_a_break.ui.calendar.ItemFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_item_list" />
 
     <fragment
         android:id="@+id/navigation_notifications"

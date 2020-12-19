@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="@dimen/margin_16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/item_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:textSize="@dimen/text_24sp"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="Café da manhã" />
+
+    <EditText
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:background="null"
+        android:textSize="@dimen/text_subtitle_21sp"
+        android:textColor="@color/colorTextSecondary"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="Das 8h até às 9h"/>
+</LinearLayout>
