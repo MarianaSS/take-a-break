@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="br.com.mariana.take_a_break.ui.settings.SettingsFragmentOld"
+        android:name="br.com.mariana.take_a_break.ui.dashboard.DashboardFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_settings"
