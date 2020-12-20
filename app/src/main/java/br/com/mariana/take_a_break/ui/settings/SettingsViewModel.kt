@@ -6,8 +6,10 @@ import androidx.lifecycle.ViewModel
 
 class SettingsViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+    private val timerValueMutable = MutableLiveData<Int>()
+    var timerValue: LiveData<Int> = timerValueMutable
+
+    fun updateValue(timerValue: Int) {
+        timerValueMutable.postValue(timerValue)
     }
-    val text: LiveData<String> = _text
 }
