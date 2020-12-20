@@ -4,6 +4,7 @@
     <PreferenceCategory app:title="@string/settings_header">
 
         <SeekBarPreference
+            android:key="trabalho"
             android:max="120"
             app:adjustable="true"
             app:defaultValue="25"
@@ -11,6 +12,7 @@
             app:title="@string/settings_work_set" />
 
         <SeekBarPreference
+            android:key="pausa"
             android:max="60"
             app:adjustable="true"
             app:defaultValue="5"
