@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.mariana.take_a_break.R
-import br.com.mariana.take_a_break.ui.calendar.content.TasksContent.TaskItem
+import br.com.mariana.take_a_break.ui.calendar.content.TasksContent
 
 class MyItemRecyclerViewAdapter(
-    private val values: List<TaskItem>
+    private val values: MutableList<TasksContent.TaskItem>
 ) : RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,6 +21,11 @@ class MyItemRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.taskTitle.hint = "Digite o nome da tarefa"
         holder.taskSubtitle.hint = "Adicione detalhes"
+
+        for (i in 0..itemCount) {
+            holder.taskTitle.text = values[i].title
+            holder.taskSubtitle.text = values[i].content
+        }
     }
 
     override fun getItemCount(): Int = values.size

@@ -4,14 +4,8 @@ import java.util.*
 
 object TasksContent {
 
-    /**
-     * An array of items.
-     */
     val ITEMS: MutableList<TaskItem> = ArrayList()
 
-    /**
-     * A map of sample items, by ID.
-     */
     private val ITEM_MAP: MutableMap<String, TaskItem> = HashMap()
 
     init {
@@ -29,9 +23,6 @@ object TasksContent {
         return TaskItem(title, details)
     }
 
-    /**
-     * A sample item representing a piece of content.
-     */
     data class TaskItem(val title: String, val content: String) {
         override fun toString(): String = content
     }

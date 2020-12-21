@@ -19,4 +19,9 @@
     <string name="settings_work_set">Tempo de trabalho</string>
     <string name="settings_break_set">Tempo de pausa</string>
 
+    <!-- Calendar Screen -->
+    <string name="calendar_header">Agenda</string>
+    <string name="calendar_title_hint">Digite o nome da tarefa</string>
+    <string name="calendar_details_hint">Adicione detalhes</string>
+
 </resources>
