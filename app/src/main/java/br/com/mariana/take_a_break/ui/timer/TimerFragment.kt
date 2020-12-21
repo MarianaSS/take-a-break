@@ -8,14 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import br.com.mariana.take_a_break.R
 import kotlinx.android.synthetic.main.fragment_timer.*
-import java.util.*
 
 class TimerFragment : Fragment() {
-
-    companion object {
-        val nowSeconds: Long
-            get() = Calendar.getInstance().timeInMillis / 1000
-    }
 
     enum class TimerState {
         Stopped, Paused, Running
@@ -38,6 +32,9 @@ class TimerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         buttonPauseTimer.setOnClickListener(onClickListener)
+        buttonStopTimer.setOnClickListener {
+            setTimerAsStopped()
+        }
     }
 
     private fun setTimerAsPaused() {
@@ -59,6 +56,18 @@ class TimerFragment : Fragment() {
             )
         )
         startTimer()
+    }
+
+    private fun setTimerAsStopped() {
+        buttonPauseTimer.setImageDrawable(
+            resources.getDrawable(
+                R.drawable.ic_baseline_play_arrow_24,
+                context?.theme
+            )
+        )
+        secondsRemaining = 0
+        onPause()
+        onTimerFinished()
     }
 
     private fun startTimer() {

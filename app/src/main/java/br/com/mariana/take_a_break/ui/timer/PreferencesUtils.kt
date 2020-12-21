@@ -10,10 +10,10 @@ class PreferencesUtils {
         private const val TIMER_LENGTH_ID = "trabalho"
         fun getTimerLength(context: Context): Int{
             val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-            return preferences.getInt(TIMER_LENGTH_ID, 10)
+            return preferences.getInt(TIMER_LENGTH_ID, 25)
         }
 
-        private const val PREVIOUS_TIMER_LENGTH_SECONDS_ID = "com.resocoder.timer.previous_timer_length_seconds"
+        private const val PREVIOUS_TIMER_LENGTH_SECONDS_ID = "previous_timer_length_seconds"
 
         fun getPreviousTimerLengthSeconds(context: Context): Long{
             val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -26,7 +26,7 @@ class PreferencesUtils {
             editor.apply()
         }
 
-        private const val TIMER_STATE_ID = "com.resocoder.timer.timer_state"
+        private const val TIMER_STATE_ID = "timer_state"
 
         fun getTimerState(context: Context?): TimerFragment.TimerState{
             val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -40,7 +40,7 @@ class PreferencesUtils {
             editor.putInt(TIMER_STATE_ID, ordinal)
             editor.apply()
         }
-        private val SECONDS_REMAINING_ID = "com.resocoder.timer.seconds_remaining"
+        private const val SECONDS_REMAINING_ID = "seconds_remaining"
 
         fun getSecondsRemaining(context: Context?): Long {
             val preferences = PreferenceManager.getDefaultSharedPreferences(context)
