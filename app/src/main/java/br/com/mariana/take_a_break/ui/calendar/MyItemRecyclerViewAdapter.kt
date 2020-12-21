@@ -19,10 +19,10 @@ class MyItemRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.taskTitle.hint = "Digite o nome da tarefa"
-        holder.taskSubtitle.hint = "Adicione detalhes"
+        holder.taskTitle.hint = holder.titleText
+        holder.taskSubtitle.hint = holder.contentText
 
-        for (i in 0..itemCount) {
+        for (i in 0 until itemCount) {
             holder.taskTitle.text = values[i].title
             holder.taskSubtitle.text = values[i].content
         }
@@ -33,5 +33,7 @@ class MyItemRecyclerViewAdapter(
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val taskTitle: TextView = view.findViewById(R.id.item_title)
         val taskSubtitle: TextView = view.findViewById(R.id.content)
+        val titleText: String = view.context.resources.getString(R.string.task_title_hint)
+        val contentText: String = view.context.resources.getString(R.string.task_content_hint)
     }
 }

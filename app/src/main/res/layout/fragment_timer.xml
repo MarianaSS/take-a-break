@@ -143,18 +143,18 @@
                 app:layout_constraintEnd_toStartOf="@+id/timeNextTask"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/scheduleNext"
-                tools:text="Almoço" />
+                android:hint="@string/task_title_hint" />
 
             <EditText
                 android:id="@+id/timeNextTask"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:hint="@string/task_content_hint"
                 android:textColor="@color/colorTextPrimary"
                 android:textSize="@dimen/text_24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/scheduleTask"
-                tools:text="12h - 13h" />
+                app:layout_constraintBottom_toBottomOf="@+id/scheduleTask"
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

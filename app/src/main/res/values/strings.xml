@@ -14,6 +14,9 @@
     <string name="message_you_are_doing_well">Você está mandando super bem!</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
+    <string name="task_title_hint">Digite uma nova tarefa</string>
+    <string name="task_content_hint">Adicione detalhes</string>
+
     <!-- Settings Screen -->
     <string name="settings_header">Configurações do Timer</string>
     <string name="settings_work_set">Tempo de trabalho</string>
