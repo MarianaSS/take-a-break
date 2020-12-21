@@ -24,10 +24,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     companion object {
 
-        /**
-         * A preference value change listener that updates the preference's summary
-         * to reflect its new value.
-         */
         private val sBindPreferenceSummaryToValueListener =
             Preference.OnPreferenceChangeListener { preference, value ->
 
@@ -41,11 +37,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
             }
 
         private fun bindPreferenceSummaryToValue(preference: Preference) {
-            // Set the listener to watch for value changes.
             preference.onPreferenceChangeListener = sBindPreferenceSummaryToValueListener
 
-            // Trigger the listener immediately with the preference's
-            // current value.
             sBindPreferenceSummaryToValueListener.onPreferenceChange(
                 preference,
                 PreferenceManager
