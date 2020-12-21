@@ -133,7 +133,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <EditText
                 android:id="@+id/scheduleTask"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="0dp"
@@ -145,7 +145,7 @@
                 app:layout_constraintTop_toBottomOf="@id/scheduleNext"
                 tools:text="Almoço" />
 
-            <TextView
+            <EditText
                 android:id="@+id/timeNextTask"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="wrap_content"
