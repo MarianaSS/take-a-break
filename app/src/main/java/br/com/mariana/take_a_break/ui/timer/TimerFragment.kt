@@ -77,6 +77,10 @@ class TimerFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         initTimer()
+
+        if (timerState == TimerState.Running) {
+            setTimerAsRunning()
+        }
     }
 
     private fun initTimer() {
