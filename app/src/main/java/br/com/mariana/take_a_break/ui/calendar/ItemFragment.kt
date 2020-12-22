@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.mariana.take_a_break.R
 import br.com.mariana.take_a_break.ui.calendar.content.TasksContent
+import kotlinx.android.synthetic.main.fragment_item_list.view.*
+import kotlinx.android.synthetic.main.fragment_timer.*
 
 class ItemFragment : Fragment() {
 
@@ -27,8 +29,9 @@ class ItemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_item_list, container, false)
-        if (view is RecyclerView) {
-            with(view) {
+        val viewList = view.list
+        if (viewList is RecyclerView) {
+            with(viewList) {
                 layoutManager = when {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
@@ -36,6 +39,12 @@ class ItemFragment : Fragment() {
                 adapter = MyItemRecyclerViewAdapter(TasksContent.ITEMS)
             }
         }
+        // GAMBI GAMBI GAMBI
+        view.first_item_title?.text = view.context.resources.getString(R.string.current_task_title)
+        view.first_item_detail?.text = view.context.resources.getString(R.string.current_task_detail)
+
+        view.second_item_title?.text = view.context.resources.getString(R.string.next_task_title)
+        view.second_item_detail?.text = view.context.resources.getString(R.string.next_task_detail)
         return view
     }
 

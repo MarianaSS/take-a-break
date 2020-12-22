@@ -7,10 +7,15 @@ class PreferencesUtils {
 
     companion object {
 
-        private const val TIMER_LENGTH_ID = "trabalho"
-        fun getTimerLength(context: Context): Int{
+        private const val WORK_TIMER_LENGTH_ID = "trabalho"
+        private const val PAUSE_TIMER_LENGTH_ID = "pausa"
+
+        fun getTimerLength(context: Context, isWorkTime: Boolean): Int{
             val preferences = PreferenceManager.getDefaultSharedPreferences(context)
-            return preferences.getInt(TIMER_LENGTH_ID, 25)
+            return if (isWorkTime)
+                preferences.getInt(WORK_TIMER_LENGTH_ID, 25)
+            else
+                preferences.getInt(PAUSE_TIMER_LENGTH_ID, 5)
         }
 
         private const val PREVIOUS_TIMER_LENGTH_SECONDS_ID = "previous_timer_length_seconds"

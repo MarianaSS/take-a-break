@@ -20,6 +20,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         val prefs = PreferenceManager.getDefaultSharedPreferences(context)
         settingsViewModel.updateValue(prefs.getInt("trabalho", 25))
+        settingsViewModel.updateValue(prefs.getInt("pausa", 5))
     }
 
     companion object {

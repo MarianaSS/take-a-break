@@ -1,13 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list"
     android:name="br.com.mariana.take_a_break.ui.calendar.ItemFragment"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/margin_16dp"
-    android:layout_marginRight="@dimen/margin_16dp"
-    app:layoutManager="LinearLayoutManager"
     tools:context=".ui.calendar.ItemFragment"
-    tools:listitem="@layout/fragment_item" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:visibility="visible">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhiteAbsolute"
+        android:padding="@dimen/margin_16dp">
+
+        <!-- ITEM 1 -->
+        <TextView
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:id="@+id/first_item_title"
+                tools:text="@string/current_task_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24dp"
+                android:layout_marginEnd="@dimen/margin_24dp"
+                android:background="@null"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="@dimen/text_24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_24dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@+id/first_item_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+                android:id="@+id/first_item_detail"
+                tools:text="@string/current_task_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_24dp"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:background="@null"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="@dimen/text_subtitle_21sp"
+                app:layout_constraintStart_toStartOf="@id/first_item_title"
+                app:layout_constraintTop_toBottomOf="@id/first_item_title" />
+
+        <View
+                android:id="@+id/end_first_item"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/first_item_detail" />
+
+
+        <!-- ITEM 2 -->
+
+        <TextView
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:id="@+id/second_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24dp"
+                android:layout_marginEnd="@dimen/margin_24dp"
+                android:background="@null"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="@dimen/text_24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/end_first_item"
+                tools:text="@string/next_task_title" />
+
+        <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_24dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@+id/second_item_title"
+                app:layout_constraintTop_toTopOf="@+id/second_item_title" />
+
+        <TextView
+                android:id="@+id/second_item_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_24dp"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:background="@null"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="@dimen/text_subtitle_21sp"
+                app:layout_constraintStart_toStartOf="@id/second_item_title"
+                app:layout_constraintTop_toBottomOf="@id/second_item_title"
+                tools:text="@string/next_task_detail" />
+
+        <View
+                android:id="@+id/end_second_item"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/second_item_detail" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            tools:listitem="@layout/fragment_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/end_second_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -11,14 +11,24 @@
     <string name="title_settings">Configurações</string>
 
     <string name="speech_pause_button">pausar</string>
-    <string name="message_you_are_doing_well">Você está mandando super bem!</string>
+    <string name="message_you_are_doing_well">Quem sabe sua próxima pausa pode ser com uma meditação?</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <string name="task_title_hint">Digite uma nova tarefa</string>
     <string name="task_content_hint">Adicione detalhes</string>
 
+    <string name="current_task_title">Enviar formulário para RH</string>
+    <string name="current_task_detail">Link no último email</string>
+
+    <string name="next_task_title">Comprar presentes de Natal</string>
+    <string name="next_task_detail">Falta pro Adilson e pra Amanda</string>
+
+    <string name="next_next_task_title">Escrever metade do artigo</string>
+    <string name="next_next_task_detail">Lembrar de  finalizar amanhã</string>
+
+
     <!-- Settings Screen -->
-    <string name="settings_header">Configurações do Timer</string>
+    <string name="settings_header">Defina como você vai focar hoje:</string>
     <string name="settings_work_set">Tempo de trabalho</string>
     <string name="settings_break_set">Tempo de pausa</string>
 
