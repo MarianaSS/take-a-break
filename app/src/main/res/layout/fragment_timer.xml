@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:visibility="visible">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -80,12 +81,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|center_horizontal"
                 android:layout_marginTop="@dimen/margin_8dp"
-                android:textColor="@color/colorTextSecondary"
+                android:textColor="@color/colorTextPrimary"
                 android:textSize="@dimen/text_subtitle_21sp"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="@id/countDown"
                 app:layout_constraintStart_toStartOf="@id/countDown"
                 app:layout_constraintTop_toBottomOf="@+id/countDown"
-                tools:text="Reunião de time" />
+                tools:text="@string/current_task_title" />
 
             <ImageButton
                 android:id="@+id/buttonPauseTimer"
@@ -127,33 +129,33 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/label_next_task"
-                android:textColor="@color/colorTextSecondary"
+                android:textColor="@color/colorTextPrimary"
                 android:textSize="@dimen/text_18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/scheduleTask"
+            <TextView
+                android:id="@+id/textNextTask"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorTextPrimary"
-                android:textSize="@dimen/text_24sp"
-                app:layout_constraintEnd_toStartOf="@+id/timeNextTask"
+                android:text="@string/next_task_title"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_18sp"
+                app:layout_constraintEnd_toStartOf="@+id/detailNextTask"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/scheduleNext"
-                android:hint="@string/task_title_hint" />
+                app:layout_constraintTop_toBottomOf="@id/scheduleNext" />
 
-            <EditText
-                android:id="@+id/timeNextTask"
+            <TextView
+                android:id="@+id/detailNextTask"
                 style="@style/Widget.AppCompat.EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/task_content_hint"
-                android:textColor="@color/colorTextPrimary"
-                android:textSize="@dimen/text_24sp"
-                app:layout_constraintBottom_toBottomOf="@+id/scheduleTask"
+                android:text="@string/next_task_detail"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="@dimen/text_18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textNextTask"
                 app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

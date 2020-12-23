@@ -16,6 +16,7 @@ class TimerFragment : Fragment() {
     }
 
     private lateinit var timer: CountDownTimer
+    private var isWorkTime: Boolean = true
     private var timerLengthSeconds: Long = 0
     private var timerState = TimerState.Paused
     private var secondsRemaining: Long = 0
@@ -35,6 +36,7 @@ class TimerFragment : Fragment() {
         buttonStopTimer.setOnClickListener {
             setTimerAsStopped()
         }
+        textCurrentTask?.text = view.context.resources.getString(R.string.current_task_title)
     }
 
     private fun setTimerAsPaused() {
@@ -67,14 +69,14 @@ class TimerFragment : Fragment() {
         )
         secondsRemaining = 0
         onPause()
-        onTimerFinished()
+        onTimerFinished(false)
     }
 
     private fun startTimer() {
         timerState = TimerState.Running
 
         timer = object : CountDownTimer(secondsRemaining * 1000, 1000) {
-            override fun onFinish() = onTimerFinished()
+            override fun onFinish() = onTimerFinished(true)
 
             override fun onTick(millisUntilFinished: Long) {
                 secondsRemaining = millisUntilFinished / 1000
@@ -93,6 +95,7 @@ class TimerFragment : Fragment() {
     }
 
     private fun initTimer() {
+
         timerState = PreferencesUtils.getTimerState(context)
 
         if (timerState == TimerState.Stopped)
@@ -106,15 +109,33 @@ class TimerFragment : Fragment() {
             timerLengthSeconds
 
         if (secondsRemaining <= 0)
-            onTimerFinished()
+            onTimerFinished(true)
         else if (timerState == TimerState.Running)
             startTimer()
 
         updateCountdownUI()
     }
-    private fun onTimerFinished() {
+    private fun onTimerFinished(taskEnd: Boolean) {
         timerState = TimerState.Stopped
-
+        if (taskEnd) {
+            if (isWorkTime) {
+                isWorkTime = false
+                textCurrentTask?.text = "Hora de relaxar um pouco!"
+            } else {
+                isWorkTime = true
+                // GAMBI GAMBI GAMBI
+                textCurrentTask?.text = "Comprar presentes de Natal!"
+                textNextTask?.text = "Escrever metade do artigo"
+                detailNextTask?.text = "Lembrar de  finalizar amanhã"
+            }
+        }
+        // GAMBI GAMBI GAMBI
+        buttonPauseTimer.setImageDrawable(
+            resources.getDrawable(
+                R.drawable.ic_baseline_play_arrow_24,
+                context?.theme
+            )
+        )
         setNewTimerLength()
 
         progressBar.progress = 0
@@ -145,7 +166,7 @@ class TimerFragment : Fragment() {
     }
 
     private fun setNewTimerLength() {
-        val lengthInMinutes = context?.let { PreferencesUtils.getTimerLength(it) }
+        val lengthInMinutes = context?.let { PreferencesUtils.getTimerLength(it, isWorkTime) }
         if (lengthInMinutes != null) {
             timerLengthSeconds = (lengthInMinutes * 60L)
         }
@@ -165,6 +186,7 @@ class TimerFragment : Fragment() {
             "$minutesUntilFinished:${if (secondsStr.length == 2) secondsStr else "0$secondsStr"}"
         progressBar?.progress = (timerLengthSeconds - secondsRemaining).toInt()
     }
+
 
     private val onClickListener = View.OnClickListener {
         when (timerState) {
