@@ -15,17 +15,3 @@ class ExampleUnitTest {
         assertEquals(4, 2 + 2)
     }
 }
-
-class JustToTestPipelines {
-    @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
-    }
-}
-
-class JustToTestPipelines {
-    @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
-    }
-}
